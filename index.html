@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to Docker</title>
+
+		<meta name="description" content="Intro_Dockers">
+		<meta name="author" content="Ren0 Roldan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-state="intro">
+					<h1>Introduction to Docker<br><span style="font-size: 35px; color: #757575">Docker starter pack in 30 min</span></h1>
+					<center><img width="70%" height="70%" src="img/docker-starterpack.png"></center>
+					<p style="text-align: left;">
+						<small>Presenter:<br>René Roldán</small>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h4>About me</h4>
+						<div class="twocolumn">
+							<div>
+								<img src="img/me.jpg" align="center">
+							</div>
+							<div style="font-size: 20px;">
+								<p style="font-size: 20px;">My friends call me Reno I'm a technology enthusiast, innovator and evangelist. Actually working as Data Architect and Data Engineer @Citibanamex.</p>
+								<p>Hobbies:</p>
+								<ul>
+									<li>Videogames</li>
+									<li>Software Development</li>
+									<li>Gatgets</li>
+									<li>Online shopping (Amazon Lover!)</li>
+									<li>Perreke</li>
+								</ul>
+								<br >
+								<br >
+								<a href="https://github.com/roldanreno/">github: roldanreno</a>
+							</div>
+						</div>
+					</section>
+					<section>
+							<img src="img/docker-objective.jpg" align="center">
+					</section>
+					<section>
+						<img src="img/letsbegin.gif" align="center">
+					</section>
+					<section style="text-align: left;">
+						<h3>The big P...<br><span style="font-size: 35px; color: #757575">Most common issues of software development:</span></h3>
+						<br>
+						<ul>
+							<li>Construction</li>
+							<li>Execution</li>
+							<li>Distribution / Deploy</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section style="text-align: left;">
+						<h3>Docker? I know the whale but what is it for?</h3>
+						<p>
+							<small>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers that allow developers packing applications with all of the parts needed to run, such as libraries and other dependencies, and ship it all out as one package.</small>
+						</p>
+						<center><img width="70%" height="70%" src="img/docker-logo.jpg" align="center"></center>
+					</section>
+					<section style="text-align: left;">
+						<h3>Docker images are the basis of containers</h3>
+						<p>
+							<small>An Image is a collection of root filesystem changes and the corresponding execution parameters for use within a container runtime stacked on top of each other. An image does not have state and it never changes.</small>
+						</p>
+						<center><img width="70%" height="60%" class="center" src="img/docker-process.jpg" align="center"></center>
+					</section>
+					<section style="text-align: left;">
+						<h3>Ok then... so Docker is?</h3>
+						<p>
+							<small>Docker is a containerization platform where we can package our application with its libraries and dependencies inside the container. Docker Container is a somewhat like a virtual machine. <br>Unlike a virtual machine, Docker container shares the same Linux kernel as the system.</small>
+						</p> 
+						<center><img width="455" height="371" class="center" src="img/docker-example.png" align="center"></center>
+					</section>
+					<section style="text-align: left;">
+						<h3>Benefits</h3>
+							<ul>	
+								<li>Versatile</li>
+								<li>Lightweight</li>
+								<li>Efficient</li>
+								<li>Isolated</li>
+							</ul>
+							<center><img width="90%" height="90%" class="center" src="img/containervsvm.png" align="center"></center>	
+					</section>
+				</section>
+				<section class="scrollable-slide">
+					<section style="text-align: left;">
+						<h3>Now let's get into it...</h3>
+						<center><img width="80%" height="80%" class="center" src="img/theshining.jpg" align="center"></center>
+					</section>
+					<section>
+						<h3>Cheat Sheet<br><span style="font-size: 35px; color: #757575">Installation: <a href="https://docs.docker.com/" target="_blank">docs.docker.com</a></span></h3>
+						<pre><code>$ docker --version</code></pre>
+						<pre><code>$ docker image ls</code></pre>
+						<pre><code>$ docker run hello-world</code></pre>
+						<pre><code>$ docker images hello-world</code></pre>
+						<pre><code>$ docker pull hello-world</code></pre>
+						<p><a href="https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf" target="_blank">Docker Cheat Sheet</a></p>
+					</section>
+					<section>
+						<h3>Let's do something more complex</h3>
+						<pre><code>$ docker run --hostname=quickstart.cloudera
+--name=clouderareno --privileged=true -ti 
+-p 8890:8888 -p 7180:7180 -p 10080:80 
+-v /home/reno/Documents/CDHDockerFolder:/src 
+--publish-all=true -d cloudera/quickstart 
+/usr/bin/docker-quickstart
+						</code></pre>
+						<ul>
+							<li>By using docker run --privileged, container can not only access to all hosts devices but also use most of host computer’s kernel functions</li>
+							<li>-i means interactive mode</li>
+							<li>-t means open it in terminal</li>
+							<li>-v allows to share volume</li>
+							<li>-p port redirection</li>
+							<li>--publish-all=true opens up all the host ports to the docker ports, so you can access programs like the Hue in the port 8888 and YARN in the port 8088</li>
+							<li>-d runs container in background and print container ID</li>
+						</ul>
+						<pre><code>$ docker ps -a</code></pre>
+						<pre><code>$ docker rm -f ID</code></pre>
+					</section>
+					<section>
+						<h3>Let's do something more complex</h3>
+						<pre><code>$ docker run --hostname=quickstart.cloudera
+--name=clouderareno --privileged=true -ti 
+-p 8890:8888 -p 7180:7180 -p 10080:80 
+-v /home/reno/Documents/CDHDockerFolder:/src 
+--publish-all=true -d cloudera/quickstart 
+/usr/bin/docker-quickstart
+						</code></pre>
+						<ul>
+							<li>--publish-all=true opens up all the host ports to the docker ports, so you can access programs like the Hue in the port 8888 and YARN in the port 8088</li>
+							<li>-d runs container in background and print container ID</li>
+						</ul>
+						<pre><code>$ docker ps -a</code></pre>
+						<pre><code>$ docker rm -f ID</code></pre>
+					</section>
+				</section>
+				<section>
+					<section style="text-align: left; font-size: 30px;">
+						<h3>Last but not least how to build a Dockerfile!</h3>
+						<p>A Docker File is a simple text file with instructions on how to build your images.</p>
+<pre><code>FROM ubuntu:latest
+MAINTAINER roldanreno@gmail.com
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+ENTRYPOINT["python"]
+CMD ["app.py"]
+</code></pre>
+						<ul>
+							<li>RUN executes command(s) in a new layer and creates a new image.</li>
+							<li>CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.</li>
+							<li>ENTRYPOINT configures a container that will run as an executable.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Build and run!</h3>
+						<pre><code>
+flask_app:
+	build: ./flask_app
+	ports:
+	 - "5000:5000"
+	volumes:
+	 - .:/code</code></pre>
+					</section>
+				</section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ mouseWheel: true },
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

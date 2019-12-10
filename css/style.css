@@ -1,0 +1,27 @@
+html.intro body {
+	background:url("img/raiders_warehouse.jpg");
+	background-position:center;
+	background-size: 100%;
+}
+
+html.intro h1, h4, p {
+	background-color: rgba(255,255,255,0.8);
+	background-image: img/
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.scrollable-slide {
+    height: 800px;
+    overflow-y: auto !important;
+}
+
+.twocolumn {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px;
+   text-align: left;
+}
